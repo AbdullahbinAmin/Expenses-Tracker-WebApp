@@ -42,14 +42,20 @@ Build the project using your preferred IDE or with Maven:
 Open your web browser and navigate to `http://localhost:8080`.
 
 ## ScreenShots
-![Example Image](screenshots/1.png) <br>
-![Example Image](screenshots/2-2.png) <br>
-![Example Image](screenshots/3-3.png) <br>
-![Example Image](screenshots/4-4.png) <br>
-![Example Image](screenshots/5-5.png) <br>
-![Example Image](screenshots/6-6.png) <br>
-![Example Image](screenshots/7.png) <br>
-![Example Image](screenshots/8.png) <br>
+### 1. Landing Page & Hero
+![Landing Page](screenshots/1.png) <br>
+
+### 2. About Section
+![About Section](screenshots/2.png) <br>
+
+### 3. Sign In Page
+![Sign In](screenshots/3.png) <br>
+
+### 4. Sign Up Page
+![Sign Up](screenshots/4.png) <br>
+
+### 5. Add Expense Page
+![Add Expense](screenshots/5.png) <br>
 
 ## Contributions
 Contributions are welcome! If you find a bug or have suggestions for improvement, feel free to open an issue or create a pull request.
