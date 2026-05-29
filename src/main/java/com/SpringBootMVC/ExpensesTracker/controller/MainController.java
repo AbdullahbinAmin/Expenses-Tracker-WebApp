@@ -3,6 +3,7 @@ package com.SpringBootMVC.ExpensesTracker.controller;
 import com.SpringBootMVC.ExpensesTracker.DTO.ExpenseDTO;
 import com.SpringBootMVC.ExpensesTracker.DTO.FilterDTO;
 import com.SpringBootMVC.ExpensesTracker.entity.Client;
+import com.SpringBootMVC.ExpensesTracker.entity.Category;
 import com.SpringBootMVC.ExpensesTracker.entity.Expense;
 import com.SpringBootMVC.ExpensesTracker.service.CategoryService;
 import com.SpringBootMVC.ExpensesTracker.service.ExpenseService;
