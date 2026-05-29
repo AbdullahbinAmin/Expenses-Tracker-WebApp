@@ -1,0 +1,48 @@
+services:
+  # MySQL Database Service
+  mysql:
+    image: mysql:8.0
+    container_name: mysql_db
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: Test@123
+      MYSQL_DATABASE: expenses_tracker
+    volumes:
+      # To persist the Data we will map volumes
+      - mysql-data:/var/lib/mysql
+    networks:
+      - app-network
+    healthcheck:
+      test: [ "CMD", "mysqladmin", "ping", "-h", "localhost", "-u", "root", "-pTest@123" ]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 20s
+
+  # Spring Boot Main Application
+  mainapp:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: Expense_Tracker_App
+    restart: always
+    environment:
+      # This will override the Spring Boot application.properties database settings
+      - SPRING_DATASOURCE_URL=jdbc:mysql://mysql:3306/expenses_tracker?allowPublicKeyRetrieval=true&useSSL=false&serverTimezone=UTC
+      - SPRING_DATASOURCE_USERNAME=root
+      - SPRING_DATASOURCE_PASSWORD=Test@123
+    ports:
+      - "8080:8080"
+    depends_on:
+      mysql:
+        condition: service_healthy
+    networks:
+      - app-network
+
+# Shared Network for containers communication
+networks:
+  app-network:
+
+    # Volume mapping definition
+volumes:
+  mysql-data:
